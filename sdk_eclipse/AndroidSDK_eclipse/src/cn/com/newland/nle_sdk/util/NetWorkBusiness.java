@@ -1,5 +1,6 @@
 package cn.com.newland.nle_sdk.util;
 
+
 import java.util.List;
 
 import cn.com.newland.nle_sdk.requestEntity.DeviceData;
@@ -15,6 +16,7 @@ import cn.com.newland.nle_sdk.responseEntity.SensorInfo;
 import cn.com.newland.nle_sdk.responseEntity.User;
 import cn.com.newland.nle_sdk.responseEntity.base.BasePager;
 import cn.com.newland.nle_sdk.responseEntity.base.BaseResponseEntity;
+
 
 /**
  * Created by marco on 2017/8/21.

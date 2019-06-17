@@ -21,7 +21,8 @@ import cn.com.newland.nle_sdk.responseEntity.DeviceDatas;
 import cn.com.newland.nle_sdk.responseEntity.DeviceInfo;
 import cn.com.newland.nle_sdk.responseEntity.DeviceState;
 import cn.com.newland.nle_sdk.responseEntity.ProjectInfo;
-import cn.com.newland.nle_sdk.responseEntity.SensorDataRecord;
+import cn.com.newland.nle_sdk.responseEntity.SensorDataInfoDTO;
+import cn.com.newland.nle_sdk.responseEntity.SensorDataPageDTO;
 import cn.com.newland.nle_sdk.responseEntity.SensorInfo;
 import cn.com.newland.nle_sdk.responseEntity.base.BasePager;
 import cn.com.newland.nle_sdk.responseEntity.base.BaseResponseEntity;
@@ -456,17 +457,17 @@ public class DetailActivity extends BaseActivity {
                 });
                 break;
             case GET_SENSOR_GROUPING:
-                netWorkBusiness.getSensorDataGrouping(deviceId, apiTag, groupBy, func, startTime, endTime, new NCallBack<BaseResponseEntity<SensorDataRecord>>(getApplicationContext()) {
+                netWorkBusiness.getSensorDataGrouping(deviceId, apiTag, groupBy, func, startTime, endTime, new NCallBack<BaseResponseEntity<SensorDataInfoDTO>>(getApplicationContext()) {
                     @Override
-                    protected void onResponse(BaseResponseEntity<SensorDataRecord> response) {
+                    protected void onResponse(BaseResponseEntity<SensorDataInfoDTO> response) {
                         Tools.printJson(tvPostResult, gson.toJson(response));
                     }
                 });
                 break;
             case GET_SENSOR_DATA:
-                netWorkBusiness.getSensorData(deviceId, apiTag, method, timeAgo, startTime, endTime, sort, pageSize, pageIndex, new NCallBack<BaseResponseEntity<SensorDataRecord>>(getApplicationContext()) {
+                netWorkBusiness.getSensorData(deviceId, apiTag, method, timeAgo, startTime, endTime, sort, pageSize, pageIndex, new NCallBack<BaseResponseEntity<SensorDataPageDTO>>(getApplicationContext()) {
                     @Override
-                    protected void onResponse(BaseResponseEntity<SensorDataRecord> response) {
+                    protected void onResponse(BaseResponseEntity<SensorDataPageDTO> response) {
                         Tools.printJson(tvPostResult, gson.toJson(response));
                     }
                 });

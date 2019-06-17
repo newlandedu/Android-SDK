@@ -5,20 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import nle.com.example.sdk_demo.util.DataCache;
-import nle_sdk.postDataSet.PostEnum;
-import nle_sdk.requestEntity.DeviceData;
-import nle_sdk.requestEntity.DeviceElement;
-import nle_sdk.responseEntity.DeviceDatas;
-import nle_sdk.responseEntity.DeviceInfo;
-import nle_sdk.responseEntity.DeviceState;
-import nle_sdk.responseEntity.ProjectInfo;
-import nle_sdk.responseEntity.SensorDataRecord;
-import nle_sdk.responseEntity.SensorInfo;
-import nle_sdk.responseEntity.base.BasePager;
-import nle_sdk.responseEntity.base.BaseResponseEntity;
-import nle_sdk.util.NCallBack;
-import nle_sdk.util.NetWorkBusiness;
-import nle_sdk.util.Tools;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
@@ -26,6 +12,21 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import cn.com.newland.nle_sdk.postDataSet.PostEnum;
+import cn.com.newland.nle_sdk.requestEntity.DeviceData;
+import cn.com.newland.nle_sdk.requestEntity.DeviceElement;
+import cn.com.newland.nle_sdk.responseEntity.DeviceDatas;
+import cn.com.newland.nle_sdk.responseEntity.DeviceInfo;
+import cn.com.newland.nle_sdk.responseEntity.DeviceState;
+import cn.com.newland.nle_sdk.responseEntity.ProjectInfo;
+import cn.com.newland.nle_sdk.responseEntity.SensorDataInfoDTO;
+import cn.com.newland.nle_sdk.responseEntity.SensorDataPageDTO;
+import cn.com.newland.nle_sdk.responseEntity.SensorInfo;
+import cn.com.newland.nle_sdk.responseEntity.base.BasePager;
+import cn.com.newland.nle_sdk.responseEntity.base.BaseResponseEntity;
+import cn.com.newland.nle_sdk.util.NCallBack;
+import cn.com.newland.nle_sdk.util.NetWorkBusiness;
+import cn.com.newland.nle_sdk.util.Tools;
 
 import com.google.gson.Gson;
 
@@ -375,6 +376,7 @@ public class DetailActivity extends BaseActivity {
                 netWorkBusiness.getSensors(deviceId, apiTag, new NCallBack<BaseResponseEntity<List<SensorInfo>>>(getApplicationContext()) {
                     @Override
                     protected void onResponse(BaseResponseEntity<List<SensorInfo>> response) {
+                    	
                         Tools.printJson(tvPostResult, gson.toJson(response));
                     }
                 });
@@ -457,17 +459,17 @@ public class DetailActivity extends BaseActivity {
                 });
                 break;
             case GET_SENSOR_GROUPING:
-                netWorkBusiness.getSensorDataGrouping(deviceId, apiTag, groupBy, func, startTime, endTime, new NCallBack<BaseResponseEntity<SensorDataRecord>>(getApplicationContext()) {
+                netWorkBusiness.getSensorDataGrouping(deviceId, apiTag, groupBy, func, startTime, endTime, new NCallBack<BaseResponseEntity<SensorDataInfoDTO>>(getApplicationContext()) {
                     @Override
-                    protected void onResponse(BaseResponseEntity<SensorDataRecord> response) {
+                    protected void onResponse(BaseResponseEntity<SensorDataInfoDTO> response) {
                         Tools.printJson(tvPostResult, gson.toJson(response));
                     }
                 });
                 break;
             case GET_SENSOR_DATA:
-                netWorkBusiness.getSensorData(deviceId, apiTag, method, timeAgo, startTime, endTime, sort, pageSize, pageIndex, new NCallBack<BaseResponseEntity<SensorDataRecord>>(getApplicationContext()) {
+                netWorkBusiness.getSensorData(deviceId, apiTag, method, timeAgo, startTime, endTime, sort, pageSize, pageIndex, new NCallBack<BaseResponseEntity<SensorDataPageDTO>>(getApplicationContext()) {
                     @Override
-                    protected void onResponse(BaseResponseEntity<SensorDataRecord> response) {
+                    protected void onResponse(BaseResponseEntity<SensorDataPageDTO> response) {
                         Tools.printJson(tvPostResult, gson.toJson(response));
                     }
                 });

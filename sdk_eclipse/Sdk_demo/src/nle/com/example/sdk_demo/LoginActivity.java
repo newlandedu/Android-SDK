@@ -4,11 +4,6 @@ package nle.com.example.sdk_demo;
 import nle.com.example.sdk_demo.util.Constants;
 import nle.com.example.sdk_demo.util.DataCache;
 import nle.com.example.sdk_demo.util.SPHelper;
-import nle_sdk.requestEntity.SignIn;
-import nle_sdk.responseEntity.User;
-import nle_sdk.responseEntity.base.BaseResponseEntity;
-import nle_sdk.util.NCallBack;
-import nle_sdk.util.NetWorkBusiness;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +12,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import cn.com.newland.nle_sdk.requestEntity.SignIn;
+import cn.com.newland.nle_sdk.responseEntity.User;
+import cn.com.newland.nle_sdk.responseEntity.base.BaseResponseEntity;
+import cn.com.newland.nle_sdk.util.NCallBack;
+import cn.com.newland.nle_sdk.util.NetWorkBusiness;
 
 
 public class LoginActivity extends BaseActivity {
