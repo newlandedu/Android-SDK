@@ -14,7 +14,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         onFirst(savedInstanceState);
         setContentView(setLayoutRes());
-        setTitle("云三期Api - " + setTitle());
+        setTitle("NLECloud SDK DEMO - " + setTitle());
         instantiateView();
         initViewData();
         registerListener();

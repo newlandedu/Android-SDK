@@ -52,8 +52,6 @@ public class LoginActivity extends BaseActivity {
     @Override
     protected void initViewData() {
         super.initViewData();
-        etUserName.setText("18259129753");
-        etPwd.setText("123456");
         setTipInfo();
     }
 

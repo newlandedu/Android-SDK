@@ -22,7 +22,8 @@ public class SensorInfo {
     private String Unit;
     //执行器字段
     private long OperType;
-    private OperTypeAttrs OperTypeAttrs;
+//    private OperTypeAttrs OperTypeAttrs;
+    private String OperTypeAttrs;
 
     //摄像头字段
     private String HttpIp;
@@ -50,11 +51,11 @@ public class SensorInfo {
         OperType = operType;
     }
 
-    public SensorInfo.OperTypeAttrs getOperTypeAttrs() {
+    public String getOperTypeAttrs() {
         return OperTypeAttrs;
     }
 
-    public void setOperTypeAttrs(SensorInfo.OperTypeAttrs operTypeAttrs) {
+    public void setOperTypeAttrs(String operTypeAttrs) {
         OperTypeAttrs = operTypeAttrs;
     }
 
@@ -217,9 +218,9 @@ public class SensorInfo {
     public void setRecordTime(String recordTime) {
         RecordTime = recordTime;
     }
-    public class  OperTypeAttrs{
+    /*public class  OperTypeAttrs{
         public long MaxRange;
         public  long MinRange;
         public long Step;
-    }
+    }*/
 }
